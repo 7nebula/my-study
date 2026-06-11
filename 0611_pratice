@@ -1,1 +1,86 @@
+package com.kh.ex1;
+
+
+public class Quiz1 {
+	public static void main(String[] args) {
+		System.out.printf(""
+				+ "====================\r\n"
+				+ "이름 : 김기정\r\n"
+				+ "나이 : 26세\r\n"
+				+ "이메일: rlarlwjd6636@gmail.com\r\n"
+				+ "====================");	
+		}
+}
+
+
+
+
+
+
+
+package com.kh.ex2;
+
+import java.util.Scanner;
+
+public class Quiz2 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in); //try (Scanner input = new Scanner(System.in)) 사용 가능 차이점은 자동으로 닫아주나 안닫아주나 차이 내가 한 방식은 input.close(); 사용하여 직접 닫아줘야함.
+		
+		System.out.print("이름을 입력하세요:");    //print 사용하여 \n방지
+		String name = input.nextLine();       //문자받음
+		
+		System.out.print("나이를 입력하세요:");   //print 사용하여 \n방지
+		int age = input.nextInt();  		 //정수로 받음
+		
+		input.close();   // 자원누수 방지
+		
+		System.out.printf("%s님(%d)의 자바 학습을 환영합니다!", name,age);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+package com.kh.ex3;
+
+import java.util.Scanner;
+
+public class Quiz3 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("상품명을 입력하세요:"); //\n방지
+		String name =input.nextLine();
+		
+		System.out.print("수량을 입력하세요:");  //\n방지
+		int how = input.nextInt();			
+		
+		System.out.print("단가를 입력하세요:");  //\n방지
+		float price = input.nextFloat();
+		input.close();						//자원누수 방지
+		
+		float total = how * price;  // 자바도 아마 float 상위연산자? 따라가는 느낌
+		
+		System.out.printf("\n\n--- 장바구니 영수증 ---\n상품명    : %s\n수량      : %d 잔\n단가      : %.2f 원\n----------------------\n총 금액   : %.2f 원",name,how,price,total);
+		
+		/*
+		--- 장바구니 영수증 ---
+		상품명    : 아메리카노
+		수량      : 3 잔
+		단가      : 4100.50 원
+		----------------------
+		총 금액   : 12301.50 원
+		*/
+		
+	}
+}
 
